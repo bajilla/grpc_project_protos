@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package userservice;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/yourusername/userservice";
+
+// UserService defines the user authentication and information retrieval service
+service UserService {
+  // Login authenticates a user and returns a token
+  rpc Login(LoginRequest) returns (LoginResponse) {}
+
+  // Logout invalidates the user's token
+  rpc Logout(google.protobuf.Empty) returns (google.protobuf.Empty) {}
+
+  // GetUserInfo retrieves the user's information
+  rpc GetUserInfo(google.protobuf.Empty) returns (UserInfo) {}
+}
+
+// LoginRequest represents the login request
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+// LoginResponse represents the login response
+message LoginResponse {
+  string token = 1;
+}
+
+// UserInfo represents user information
+message UserInfo {
+  string username = 1;
+  string email = 2;
+}
