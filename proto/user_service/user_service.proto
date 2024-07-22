@@ -4,7 +4,7 @@ package userservice;
 
 import "google/protobuf/empty.proto";
 
-option go_package = "github.com/yourusername/userservice";
+option go_package = "github.com/bajiila/grpc-project-service/";
 
 // UserService defines the user authentication and information retrieval service
 service UserService {
